@@ -4,6 +4,8 @@ import { v2 as cloudinary } from "cloudinary";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import postRoutes from "./routes/postRoutes.js";
+import notificationRoutes from "";
 import connectDB from "./db/connectdb.js";
 import pkg from "body-parser";
 
@@ -23,6 +25,7 @@ const PORT = process.env.PORT || 5000;
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
+app.use("/api/notifications", notificationRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port ${PORT}`);
